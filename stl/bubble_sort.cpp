@@ -15,11 +15,11 @@ void bubbleSort(T a[], int n){
 
 int main() {
 	
-	int a[5] = {50, 30, 20 ,40, 10};
-	bubbleSort<int>(a, 5);
+	int a[5] = {50, 30, 20 ,40};
+	bubbleSort<int>(a, 4);
 	
 	cout<<"Sorted array: ";
-	for(int i=0;i<5; i++) cout<<a[i]<<" ";
+	for(int i=0;i<4; i++) cout<<a[i]<<" ";
     
     return 0;
 }
