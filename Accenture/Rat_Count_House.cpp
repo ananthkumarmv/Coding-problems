@@ -5,17 +5,17 @@ using namespace std;
 int compute(int r, int u, int n, int *a){
 	if(n==0) return -1;
 	
-	int i=0;
 	int totfood = r*u;
-	while(totfood>0){
-		cout<<totfood<<" ";
-		totfood-=a[i];
-		i++;
+	int foodTillNow = 0;
+	int i=0;
+	
+	for(; i<n;i++){
+		foodTillNow+=a[i];
+		if(foodTillNow>=totfood) break;
 	}
 	
-	if(totfood==0) return i;
-	
-	return 0;
+	if(totfood>foodTillNow) return 0;
+	return i+1;
 }
 
 int main(){
