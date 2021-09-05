@@ -4,48 +4,28 @@
 using namespace std;
 
 
-int CheckPassword(char str[], int n, int min){
-	if(n<min) 
-		return 0;
+int password(string str){
+	if(str.length()<4) return 0;
+	if((str[0]-'0')>=0 && (str[0]-'0')<=9) return 0;
 	
-	if(str[0]-'0'>=0 && str[0]-'0'<=9)
-		return 0;
+	int num=0, cap=0;
+	for(int i=0;i<str.length();i++){
+		if(str[i]==' ' || str[i]=='/') return 0;
 		
-	int i=0, cap=0, num=0;
-	
-	while(i<n){
-		if(str[i]==' '|| str[i]=='+')
-			return 0;
-			
-		if(str[i]>=65 && str[i]<=90)
-			cap++;
+		else if((str[i]-'0')>=0 && (str[i]-'0')<=9) num++;
 		
-		else if(str[i]-'0'>=0 && str[i]-'0'<=9)
-			num++;
-		
-		i++;
-	}	
+		else if((str[i]>='A' && (str[i])<='Z')) cap++;
+	}
 	
 	return (cap>0 && num>0);
 }
 
-
-
 int main(){
-	string s;
-	int min;
 	
-	getline(cin, s);
-	cin>>min;
-	int len =s.size();
-	char *c = &s[0];
+	string str;
+	getline(cin, str);
 	
-	
-	if(CheckPassword(c, len, min)){
-		cout<<"Valid";
-	}
-	else cout<<"Not valid";
-	
+	cout<<password(str);
+
 	return 0;
 }
-
