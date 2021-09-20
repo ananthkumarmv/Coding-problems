@@ -2,11 +2,15 @@
 
 using namespace std;
 
+struct vect{
+	int first, second;
+};
+
 
 vector< pair<int, int> > primeFactor(int num){
 	
 	
-	vector< pair<int, int> > vec;
+	vector<vect> vec;
 	
 	int c=0;
 	
@@ -19,15 +23,20 @@ vector< pair<int, int> > primeFactor(int num){
 	}
 	
 	for(int i=3; i<=sqrt(num); i=i+2){
-		int c=0;
+		int k=0;
 		if(num%i==0){
-			c++;
+			k++;
 			num/=i;
 		}
-		if(c>0){
+		if(k>0){
 			vec.push_back(make_pair(i, c));
 		}
 	}
+	for(int i=0;i<vec.size();i++){
+		cout<<vec[i].first<<" "<<vec[i].second<<endl;
+	}
+	
+	
 }
 
 
@@ -36,23 +45,24 @@ int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	
-	int n;
-	cin>>n;
-	
-	int arr[n];
-	for(int i=0;i<n;i++) cin>>arr[i];
+//	int n;
+//	cin>>n;
+//	
+//	int arr[n];
+//	for(int i=0;i<n;i++) cin>>arr[i];
 	
 	int num;
 	cin>>num;
 	
-	vector< pair<int, int> > vect = primeFactor(num);
-	
-	int sum=0;
-	for(int i=0;i<vect.size();i++){
-		sum=sum+ (vect[i].first*arr[vect[i].first]);
- 	}
-	
- 	cout<<sum;
+	primeFactor(num);
+//	vector< pair<int, int> > vect = primeFactor(num);
+//	
+//	int sum=0;
+//	for(int i=0;i<vect.size();i++){
+//		sum=sum+ (vect[i].first*arr[vect[i].first]);
+// 	}
+//	
+// 	cout<<sum;
 	
 	return 0;
 }
