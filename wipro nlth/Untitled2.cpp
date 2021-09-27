@@ -7,41 +7,27 @@ int main(){
 	
 	int a[3];
 	
-	int num=9;
+	int thnum=9, hnum=0, tenum=9, unnum=0;
+	
+	int t, h, te, un;
 	for(int i=0;i<3; i++) cin>>a[i];
 	
 	for(int i=0;i<3; i++){
-		int h= a[i]/1000;
-		num =min(num , h);
-	}
-	
-	cout<<num;
-	
-	num=0;
-	
-	for(int i=0;i<3; i++){
-		int k= (a[i]/100)%10;
-		num =max(num, k);
 		
-	}
-	cout<<num;
-	
-	num=9;
-	
-	for(int i=0;i<3; i++){
-		int l= (a[i]/10)%10;
-		num =min(num , l);
-	}
-	
-	cout<<num;
-	
-	num =0;
-	for(int i=0;i<3; i++){
-		int l= a[i]%10;
-		num =max(num , l);
+		t= a[i]/1000;
+		thnum =min(thnum , t);
+		
+		h= (a[i]/100)%10;
+		hnum =max(hnum, h);
+		
+		te= (a[i]/10)%10;
+		tenum =min(tenum , te);
+		
+		un= a[i]%10;
+		unnum =max(unnum , un);
 	}
 	
-	cout<<num;
+	cout<<thnum<<hnum<<tenum<<unnum;
 	
 	return 0;
 }
