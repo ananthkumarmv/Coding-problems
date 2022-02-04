@@ -20,7 +20,6 @@ vector<int> SolveQueries(vector<int>nums, vector<vector<int>>Queries, int k){
 }
 
 
-
 int main(){
 	
 	vector<int> num{7,6,5,4,5,6,4,3,2,5,9};
