@@ -16,6 +16,7 @@ void printABCDPattern(int n){
 	}
 }
 
+
 int main(){
 	int n;
 	cin>>n;
