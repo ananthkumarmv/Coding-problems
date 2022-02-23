@@ -10,6 +10,7 @@ int main(){
 	if(m%a!=0) bre++;
 	cout<<len*bre;
 
+
 	return 0;
 }
 
