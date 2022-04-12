@@ -16,7 +16,7 @@ void removeSpace(char *str){
 
 int main(){
 	
-	char str[] = "An  an th kuma r";
+	string str[] = "An  an th kuma r";
 	removeSpace(str);
 	
 	cout<<str;
