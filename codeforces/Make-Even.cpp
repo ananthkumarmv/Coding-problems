@@ -1,5 +1,4 @@
 #include<iostream>
-#include<string>
 
 using namespace std;
 
@@ -28,11 +27,50 @@ using namespace std;
 
 int main(){
 
-	string str = "10";
+	fast;
+
+	int t;
+	cin>>t;
 	
-	string s = str[0] - '0' + str[1] - '0';
-	
-	cout<<s;
+	string str;
+	while(t--){
+
+		cin>>str;
+		int n = l(str);
+		
+		int x = str[n-1] - '0';
+		
+		if(x%2 == 0){
+			cout<<0<<endl;
+		}
+		
+		else if(n==1 && x%2 != 0){
+			cout<<-1<<endl;
+		}
+		
+		
+		else if((str[0]-'0')%2 == 0){
+			cout<<1<<endl;
+		}
+		
+		else {
+			bool flag = false;
+			for(int i=1; i<n-1; i++){
+				int z = str[i] - '0';
+				if(z%2 == 0){
+					flag = true;
+					break;
+				}
+			}
+			
+			if(flag == true)
+				cout<<2<<endl;
+			else
+				cout<<-1<<endl;
+			
+		}
+			   		   
+	}
 
 	return 0;
 }
